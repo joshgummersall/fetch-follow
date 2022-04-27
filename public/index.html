@@ -1,7 +1,11 @@
 <html>
   <script type="text/javascript">
     (async () => {
-      const resp = await fetch('/foo');
+      const resp = await fetch('/foo', {
+        headers: {
+          original: 'header'
+        }
+      });
       const json = await resp.json();
       console.log(resp, json);
     })();
